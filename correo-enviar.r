@@ -21,7 +21,7 @@ for (i in (1:length(datos_envio)))
     bl_em <- compose_email(
       body=mensaje_md,
       footer=md("enviado via Microsoft365R"))
-    em <- outlb$create_email(bl_em, subject="Hola dede R", to="equihuam@gmail.com")
+    em <- outlb$create_email(bl_em, subject="Hola dede R", to="lola@correo.com")
     
     # add an attachment and send it
     em$add_attachment("correo-leer.r")
