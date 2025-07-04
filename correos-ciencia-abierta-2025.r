@@ -14,6 +14,7 @@ datos_prods    <- read.csv("contratos-ciab/dat-entregables.csv")
 mensaje_base   <- read_file("contratos-ciab/mensaje-base.md")
 img_firma_html <- add_image(file = "contratos-ciab/firma-Miguel-2025.png", 
                             width =600)
+lista_cc <- source(file = "contratos-ciab/dat-copias.txt", )$value
 
 
 # Genera los mensajes personalizados  
@@ -52,9 +53,7 @@ for (i in (1:length(datos_envio$nombre)))
     em <- outlb$create_email(bl_em, 
                              subject="Solicitud de cotización", 
                              to = email,
-                             cc = c("elio.lagunes@inecol.mx", 
-                                    "reyna.rebolledo@inecol.mx",
-                                    "edith.rebolledo.hernandez@gmail.com"))
+                             cc = lista_cc)
     
     # add an attachment and send it
     em$add_attachment("contratos-ciab/carta_datos_bancarios.docx")
