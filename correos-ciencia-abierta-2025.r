@@ -1,4 +1,4 @@
-# Outlook 365
+# Genera emails con base en Outlook 365
 
 pacman::p_load(Microsoft365R, dplyr, stringr, blastula, readr, gt)
 
